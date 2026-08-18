@@ -21,24 +21,18 @@ export default function AboutSection() {
           
           {/* Image (5 cols) */}
           <div className="lg:col-span-5 order-2 lg:order-1 lg:mt-0">
-            <motion.div style={{ y: shouldReduceMotion ? 0 : y }}>
-              <motion.div 
-                className="aspect-[4/5] overflow-hidden rounded-[4px] bg-[var(--color-rule)]"
-                initial={shouldReduceMotion ? { opacity: 0 } : clipRevealRight.initial}
-                whileInView={shouldReduceMotion ? { opacity: 1, transition: { duration: DUR.STD } } : clipRevealRight.whileInView}
-                viewport={VIEWPORT_OFFSET}
-              >
-                <motion.img 
-                  loading="lazy"
-                  decoding="async"
-                  src="/society-images/llyods2.png" 
-                  alt="Entrance to Llyods Garden Co-operative Housing Society" 
-                  className="w-full h-full object-cover object-center"
-                  initial={{ scale: shouldReduceMotion ? 1 : 1.025 }}
-                  whileInView={{ scale: 1, transition: { duration: DUR.IMAGE, ease: EASE_PRIMARY } }}
-                  viewport={VIEWPORT_OFFSET}
-                />
-              </motion.div>
+            <motion.div
+              className="aspect-[4/5] overflow-hidden rounded-[4px] bg-[var(--color-rule)]"
+              initial={{ clipPath: 'circle(0% at 50% 50%)' }}
+              animate={{ clipPath: 'circle(150% at 50% 50%)' }}
+            >
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/society-images/llyods2.png"
+                alt="Entrance to Llyods Garden Co-operative Housing Society"
+                className="w-full h-full object-cover object-center"
+              />
             </motion.div>
           </div>
 

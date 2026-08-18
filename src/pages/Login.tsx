@@ -1,10 +1,54 @@
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+interface ApiResponse<T> {
+  success: boolean;
+  message: string;
+  data: T;
+}
+
+interface LoginResponse {
+  role: 'SUPER_ADMIN' | 'SOCIETY_ADMIN' | 'MEMBER';
+  [key: string]: unknown;
+}
+
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError(null);
+
+    try {
+      const res = await fetch(`${import.meta.env.VITE_DASHBOARD_API_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const body: ApiResponse<LoginResponse> = await res.json();
+
+      if (!res.ok || !body.success) {
+        throw new Error(body.message || 'Invalid username or password');
+      }
+
+      // Fragments (#...) are never sent to the server or logged, unlike query params.
+      // encodeURIComponent guards against '+' / '/' / '=' in the base64 output being
+      // misread (e.g. '+' as a literal space) when the callback parses the fragment.
+      const encoded = encodeURIComponent(btoa(unescape(encodeURIComponent(JSON.stringify(body.data)))));
+      window.location.href = `${import.meta.env.VITE_DASHBOARD_APP_URL}/auth/callback#session=${encoded}`;
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row bg-[var(--color-main)]">
@@ -60,13 +104,22 @@ export default function Login() {
             </p>
           </div>
 
-          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-            
+          <form className="space-y-5" onSubmit={handleSubmit}>
+
+            {error && (
+              <div className="px-4 py-3 rounded-[4px] bg-red-50 border border-red-200 text-[13px] text-red-700">
+                {error}
+              </div>
+            )}
+
             <div className="space-y-2">
               <label htmlFor="username" className="block text-[13px] font-medium text-[var(--color-ink)]">Username</label>
-              <input 
-                type="text" 
-                id="username" 
+              <input
+                type="text"
+                id="username"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
                 className="w-full h-[52px] md:h-[56px] px-4 bg-white border border-[rgba(20,20,20,0.16)] rounded-[4px] text-[15px] text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-graphite)] focus:ring-1 focus:ring-[var(--color-graphite)] transition-all"
                 placeholder="Enter your username"
               />
@@ -75,9 +128,12 @@ export default function Login() {
             <div className="space-y-2 relative">
               <label htmlFor="password" className="block text-[13px] font-medium text-[var(--color-ink)]">Password</label>
               <div className="relative">
-                <input 
-                  type={showPassword ? 'text' : 'password'} 
-                  id="password" 
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                   className="w-full h-[52px] md:h-[56px] pl-4 pr-12 bg-white border border-[rgba(20,20,20,0.16)] rounded-[4px] text-[15px] text-[var(--color-ink)] focus:outline-none focus:border-[var(--color-graphite)] focus:ring-1 focus:ring-[var(--color-graphite)] transition-all"
                   placeholder="Enter your password"
                 />
@@ -108,11 +164,12 @@ export default function Login() {
               </Link>
             </div>
 
-            <button 
+            <button
               type="submit"
-              className="w-full h-[52px] md:h-[56px] bg-[var(--color-graphite)] text-[#F4F1EA] rounded-[4px] text-[14px] font-semibold tracking-wide transition-colors hover:bg-[var(--color-ink)]"
+              disabled={submitting}
+              className="w-full h-[52px] md:h-[56px] bg-[var(--color-graphite)] text-[#F4F1EA] rounded-[4px] text-[14px] font-semibold tracking-wide transition-colors hover:bg-[var(--color-ink)] disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Sign In
+              {submitting ? 'Signing In…' : 'Sign In'}
             </button>
           </form>
 
