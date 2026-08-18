@@ -1,18 +1,11 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { sectionLabel, DUR, EASE_PRIMARY, VIEWPORT_OFFSET } from '../../utils/animations';
 
 export default function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
   
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
-
   return (
     <section id="about" className="bg-[var(--color-paper)] pt-[24px] md:pt-[32px] pb-[72px] md:pb-[96px]" ref={containerRef}>
       <div className="max-w-[1320px] mx-auto px-[20px] md:px-[32px] lg:px-[48px] xl:px-[56px] w-full">
