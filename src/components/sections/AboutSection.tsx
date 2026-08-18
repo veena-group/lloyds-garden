@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
-import { sectionLabel, clipRevealRight, DUR, EASE_PRIMARY, VIEWPORT_OFFSET } from '../../utils/animations';
+import { sectionLabel, DUR, EASE_PRIMARY, VIEWPORT_OFFSET } from '../../utils/animations';
 
 export default function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
