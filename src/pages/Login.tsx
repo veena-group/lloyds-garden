@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface ApiResponse<T> {
@@ -83,11 +83,8 @@ export default function Login() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 0.6 } }}
         >
-          {/* Mobile Back & Logo */}
+          {/* Mobile Logo */}
           <div className="md:hidden mb-12">
-            <Link to="/" className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide text-[var(--color-stone)] hover:text-[var(--color-ink)] transition-colors mb-6">
-              <ArrowLeft size={16} /> Back to website
-            </Link>
             <span className="block font-display text-3xl tracking-wide uppercase text-[var(--color-ink)]">
               LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-[var(--color-stone)]">GARDEN</span>
             </span>
@@ -157,12 +154,6 @@ export default function Login() {
                 />
                 <span className="text-[13px] text-[var(--color-ink)]">Remember me</span>
               </label>
-              <Link 
-                to="/forgot-password" 
-                className="text-[13px] font-medium text-[var(--color-stone)] hover:text-[var(--color-ink)] transition-colors"
-              >
-                Forgot password?
-              </Link>
             </div>
 
             <button
@@ -173,15 +164,6 @@ export default function Login() {
               {submitting ? 'Signing In…' : 'Sign In'}
             </button>
           </form>
-
-          <div className="mt-8 text-center hidden md:block">
-            <Link 
-              to="/" 
-              className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide text-[var(--color-stone)] hover:text-[var(--color-ink)] transition-colors group"
-            >
-              <ArrowLeft size={16} className="transition-transform duration-200 group-hover:-translate-x-1" /> Back to website
-            </Link>
-          </div>
 
         </motion.div>
       </div>
