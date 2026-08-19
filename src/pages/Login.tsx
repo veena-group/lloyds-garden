@@ -65,7 +65,7 @@ export default function Login() {
         <div className="absolute top-12 left-12 z-10">
           <Link to="/" className="inline-block">
             <span className="font-display text-3xl tracking-wide uppercase text-white">
-              LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-white/80">CHSL</span>
+              LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-white/80">GARDEN</span>
             </span>
           </Link>
         </div>
@@ -89,7 +89,7 @@ export default function Login() {
               <ArrowLeft size={16} /> Back to website
             </Link>
             <span className="block font-display text-3xl tracking-wide uppercase text-[var(--color-ink)]">
-              LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-[var(--color-stone)]">CHSL</span>
+              LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-[var(--color-stone)]">GARDEN</span>
             </span>
           </div>
 

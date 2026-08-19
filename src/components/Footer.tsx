@@ -38,12 +38,12 @@ export default function Footer() {
             <Link to="/" className="inline-block mb-6">
               {logoError ? (
                 <span className="font-display text-xl sm:text-2xl tracking-wide uppercase text-white">
-                  LLOYDS <span className="text-xs sm:text-sm font-sans font-medium tracking-widest ml-1 opacity-80">CHSL</span>
+                  LLOYDS <span className="text-xs sm:text-sm font-sans font-medium tracking-widest ml-1 opacity-80">GARDEN</span>
                 </span>
               ) : (
                 <img 
                   src="/logo.webp" 
-                  alt="Lloyds CHSL" 
+                  alt="Lloyds Garden" 
                   onError={() => setLogoError(true)}
                   className="w-[145px] md:w-[165px] object-contain brightness-0 invert opacity-90"
                 />

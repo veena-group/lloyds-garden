@@ -50,7 +50,7 @@ export default function Hero() {
                   animate={{ y: "0%" }}
                   transition={{ duration: DUR.EDITORIAL, delay: 0.21, ease: EASE_PRIMARY }}
                 >
-                  CHSL
+                  Garden
                 </motion.div>
               </div>
             </h1>

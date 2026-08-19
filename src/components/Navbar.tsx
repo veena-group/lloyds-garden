@@ -76,15 +76,15 @@ export default function Navbar() {
       >
         <div className="max-w-[1320px] mx-auto px-[20px] md:px-[32px] lg:px-[48px] xl:px-[56px] h-[64px] lg:h-[74px] flex items-center justify-between">
           
-          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center" aria-label="Lloyds CHSL Home">
+          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center" aria-label="Lloyds Garden Home">
             {logoError ? (
               <span className={`font-display text-xl sm:text-2xl tracking-wide uppercase transition-colors duration-200 ${isDarkNavbar ? 'text-white' : 'text-[var(--color-ink)]'}`}>
-                LLOYDS <span className="text-xs sm:text-sm font-sans font-medium tracking-widest ml-1 opacity-80">CHSL</span>
+                LLOYDS <span className="text-xs sm:text-sm font-sans font-medium tracking-widest ml-1 opacity-80">GARDEN</span>
               </span>
             ) : (
-              <img 
-                src="/logo.webp" 
-                alt="Lloyds CHSL" 
+              <img
+                src="/logo.webp"
+                alt="Lloyds Garden"
                 onError={() => setLogoError(true)}
                 className={`w-[125px] sm:w-[145px] lg:w-[180px] object-contain transition-all duration-200 ${isDarkNavbar ? 'brightness-0 invert' : ''}`}
               />
