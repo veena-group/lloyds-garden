@@ -69,7 +69,7 @@ export default function LocationContactSection() {
                 <motion.div variants={shouldReduceMotion ? {} : textFadeIn}>
                   <h4 className="text-[11px] font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)] mb-2">Society Office</h4>
                   <p className="text-[15px] md:text-[16px] leading-[1.65] text-[var(--color-ink)]">
-                    Llyods Garden Co-operative Housing Society Ltd.<br />
+                    Lloyds Garden Co-operative Housing Society Ltd.<br />
                     Appasaheb Marathe Marg<br />
                     near Century Bazaar<br />
                     Prabhadevi<br />
@@ -91,8 +91,9 @@ export default function LocationContactSection() {
               <img 
                 loading="lazy"
                 decoding="async"
-                src="/society-images/llyods5.png" 
-                alt="Llyods Garden Co-operative Housing Society" 
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                src="/society-images/lloyds5.webp" 
+                alt="Lloyds Garden Co-operative Housing Society" 
                 className="w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.018]"
                 style={{ transformOrigin: '50% 50%' }}
               />

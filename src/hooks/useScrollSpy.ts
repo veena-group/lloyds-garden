@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-type SectionId = 'home' | 'about' | 'committee' | 'gallery' | 'events' | 'contact' | 'member-portal' | 'welcome' | 'community' | 'cooperative' | 'around-llyods' | null;
+type SectionId = 'home' | 'about' | 'committee' | 'gallery' | 'events' | 'contact' | 'member-portal' | 'welcome' | 'community' | 'cooperative' | 'around-lloyds' | null;
 
 export function useScrollSpy() {
   const [activeSection, setActiveSection] = useState<SectionId>('home');
@@ -72,7 +72,7 @@ export function useScrollSpy() {
             let id = entry.target.id as SectionId;
             
             // Map sub-sections to 'about'
-            if (id === 'welcome' || id === 'community' || id === 'cooperative' || id === 'around-llyods') {
+            if (id === 'welcome' || id === 'community' || id === 'cooperative' || id === 'around-lloyds') {
               id = 'about';
             }
             
@@ -96,7 +96,7 @@ export function useScrollSpy() {
       { rootMargin: '-25% 0px -55% 0px' }
     );
 
-    const sections = ['home', 'welcome', 'about', 'around-llyods', 'community', 'cooperative', 'committee', 'gallery', 'events', 'contact', 'member-portal'];
+    const sections = ['home', 'welcome', 'about', 'around-lloyds', 'community', 'cooperative', 'committee', 'gallery', 'events', 'contact', 'member-portal'];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);

@@ -4,6 +4,6 @@ export interface SocietyData {
 }
 
 export const societyData: SocietyData = {
-  name: "Llyods Co-operative Housing Society Ltd.",
-  shortName: "Llyods CHSL"
+  name: "Lloyds Co-operative Housing Society Ltd.",
+  shortName: "Lloyds CHSL"
 };

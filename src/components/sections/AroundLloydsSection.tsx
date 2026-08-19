@@ -24,14 +24,14 @@ const cellVariants: Variants = {
   }
 };
 
-export default function AroundLlyodsSection() {
+export default function AroundLloydsSection() {
   const shouldReduceMotion = useReducedMotion();
 
   const features = [
     {
       id: '01',
       title: 'Connectivity',
-      desc: 'Located in Prabhadevi, Llyods is connected to the wider Mumbai road and public transport network.',
+      desc: 'Located in Prabhadevi, Lloyds is connected to the wider Mumbai road and public transport network.',
       detail: 'PRABHADEVI · MUMBAI',
       icon: MapPin
     },
@@ -66,14 +66,14 @@ export default function AroundLlyodsSection() {
     {
       id: '06',
       title: 'The Neighbourhood',
-      desc: 'Llyods forms part of an established residential neighbourhood around Appasaheb Marathe Marg and Century Bazaar.',
+      desc: 'Lloyds forms part of an established residential neighbourhood around Appasaheb Marathe Marg and Century Bazaar.',
       detail: 'PRABHADEVI · 400025',
       icon: Trees
     }
   ];
 
   return (
-    <section id="around-llyods" className="bg-[#F7F3EC] py-[64px] md:py-[88px]">
+    <section id="around-lloyds" className="bg-[#F7F3EC] py-[64px] md:py-[88px]">
       <div className="max-w-[1320px] mx-auto px-[20px] md:px-[32px] lg:px-[48px] xl:px-[56px] w-full">
         
         <div className="max-w-[640px] mb-[44px] md:mb-[48px]">
@@ -84,7 +84,7 @@ export default function AroundLlyodsSection() {
             variants={sectionLabel}
           >
             <span className="block text-[11px] md:text-[12px] font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)] mb-6">
-              Around Llyods
+              Around Lloyds
             </span>
           </motion.div>
           
@@ -107,7 +107,7 @@ export default function AroundLlyodsSection() {
             transition={{ duration: DUR.STD, delay: 0.2, ease: EASE_PRIMARY }}
             viewport={VIEWPORT_OFFSET}
           >
-            Llyods is connected to the everyday essentials of city life, with access to transport, healthcare, education, shopping and neighbourhood conveniences.
+            Lloyds is connected to the everyday essentials of city life, with access to transport, healthcare, education, shopping and neighbourhood conveniences.
           </motion.p>
         </div>
 
@@ -136,17 +136,17 @@ export default function AroundLlyodsSection() {
             >
               <style>{`
                 @media (min-width: 768px) {
-                  #around-llyods .grid > div:nth-child(n+3) { border-top-width: 1px; }
-                  #around-llyods .grid > div:nth-child(2n) { border-left-width: 1px; }
-                  #around-llyods .grid > div:nth-child(2n+1) { border-left-width: 0; }
+                  #around-lloyds .grid > div:nth-child(n+3) { border-top-width: 1px; }
+                  #around-lloyds .grid > div:nth-child(2n) { border-left-width: 1px; }
+                  #around-lloyds .grid > div:nth-child(2n+1) { border-left-width: 0; }
                 }
                 @media (min-width: 1024px) {
-                  #around-llyods .grid > div:nth-child(n+4) { border-top-width: 1px; }
-                  #around-llyods .grid > div:nth-child(n+1) { border-top-width: 0; }
-                  #around-llyods .grid > div:nth-child(n+4) { border-top-width: 1px; }
-                  #around-llyods .grid > div:nth-child(3n+2),
-                  #around-llyods .grid > div:nth-child(3n+3) { border-left-width: 1px; }
-                  #around-llyods .grid > div:nth-child(3n+1) { border-left-width: 0; }
+                  #around-lloyds .grid > div:nth-child(n+4) { border-top-width: 1px; }
+                  #around-lloyds .grid > div:nth-child(n+1) { border-top-width: 0; }
+                  #around-lloyds .grid > div:nth-child(n+4) { border-top-width: 1px; }
+                  #around-lloyds .grid > div:nth-child(3n+2),
+                  #around-lloyds .grid > div:nth-child(3n+3) { border-left-width: 1px; }
+                  #around-lloyds .grid > div:nth-child(3n+1) { border-left-width: 0; }
                 }
               `}</style>
               
@@ -184,8 +184,9 @@ export default function AroundLlyodsSection() {
           <img 
             loading="lazy"
             decoding="async"
-            src="/society-images/llyods5.png" 
-            alt="Llyods Garden context view" 
+            onError={(e) => { e.currentTarget.style.display = 'none'; }}
+            src="/society-images/lloyds5.webp" 
+            alt="Lloyds Garden context view" 
             className="w-full h-full object-cover object-[center_55%]"
           />
         </motion.div>

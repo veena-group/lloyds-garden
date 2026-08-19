@@ -19,7 +19,7 @@ export default function WelcomeSection() {
               variants={sectionLabel}
             >
               <span className="block text-[11px] md:text-[12px] font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)] mb-6">
-                Welcome to Llyods
+                Welcome to Lloyds
               </span>
             </motion.div>
 
@@ -41,7 +41,7 @@ export default function WelcomeSection() {
               viewport={VIEWPORT_OFFSET}
             >
               <p>
-                <strong className="font-medium text-[var(--color-ink)]">Llyods Garden Co-operative Housing Society Ltd.</strong> is a residential community located on Appasaheb Marathe Marg in Prabhadevi, Mumbai. Like every co-operative community, its character is shaped not only by its buildings, but by the residents who share responsibility for the spaces, administration and everyday life of the society.
+                <strong className="font-medium text-[var(--color-ink)]">Lloyds Garden Co-operative Housing Society Ltd.</strong> is a residential community located on Appasaheb Marathe Marg in Prabhadevi, Mumbai. Like every co-operative community, its character is shaped not only by its buildings, but by the residents who share responsibility for the spaces, administration and everyday life of the society.
               </p>
               <p>
                 The society brings members together through an organised co-operative framework while maintaining focus on communication, common responsibilities and the long-term upkeep of the residential community.
@@ -63,8 +63,9 @@ export default function WelcomeSection() {
               <motion.img 
                 loading="lazy"
                 decoding="async"
-                src="/society-images/llyods3.png" 
-                alt="Llyods Garden society sign surrounded by greenery" 
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                src="/society-images/lloyds3.webp" 
+                alt="Lloyds Garden society sign surrounded by greenery" 
                 className="w-full h-full object-cover"
                 initial={{ scale: shouldReduceMotion ? 1 : 1.03 }}
                 whileInView={{ scale: 1, transition: { duration: DUR.IMAGE, ease: EASE_PRIMARY } }}

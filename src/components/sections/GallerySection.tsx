@@ -29,7 +29,7 @@ export default function GallerySection() {
             variants={sectionLabel}
           >
             <span className="block text-[11px] md:text-[12px] font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)] mb-[16px]">
-              Life at Llyods
+              Life at Lloyds
             </span>
           </motion.div>
           <motion.h2 
@@ -39,7 +39,7 @@ export default function GallerySection() {
             transition={{ duration: DUR.STD, delay: 0.1, ease: EASE_PRIMARY }}
             viewport={VIEWPORT_OFFSET}
           >
-            A glimpse of Llyods.
+            A glimpse of Lloyds.
           </motion.h2>
           <motion.p 
             className="text-[16px] md:text-[17px] leading-[1.65] text-[#6F6B65] max-w-[480px]"
@@ -58,7 +58,7 @@ export default function GallerySection() {
           {/* Row 1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 md:gap-4">
             
-            {/* llyods4 (main): cols 1-8 */}
+            {/* lloyds4 (main): cols 1-8 */}
             <div className="lg:col-span-8 group overflow-hidden rounded-[4px]">
               <motion.div 
                 className="w-full h-full lg:h-[450px] aspect-[4/3] md:aspect-auto bg-[var(--color-rule)]"
@@ -69,14 +69,15 @@ export default function GallerySection() {
                 <img 
                   loading="lazy"
                   decoding="async"
-                  src="/society-images/llyods4.png" 
-                  alt="Exterior view of Llyods Garden Co-operative Housing Society" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  src="/society-images/lloyds4.webp" 
+                  alt="Exterior view of Lloyds Garden Co-operative Housing Society" 
                   className="w-full h-full block object-cover object-[50%_38%] transition-transform duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:scale-[1.018]"
                 />
               </motion.div>
             </div>
 
-            {/* llyods2 (entrance): cols 9-12 */}
+            {/* lloyds2 (entrance): cols 9-12 */}
             <div className="lg:col-span-4 group overflow-hidden rounded-[4px]">
               <motion.div 
                 className="w-full h-full lg:h-[450px] aspect-[4/5] md:aspect-auto bg-[var(--color-rule)]"
@@ -87,8 +88,9 @@ export default function GallerySection() {
                 <img 
                   loading="lazy"
                   decoding="async"
-                  src="/society-images/llyods2.png" 
-                  alt="Entrance to Llyods Garden Co-operative Housing Society" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  src="/society-images/lloyds2.webp" 
+                  alt="Entrance to Lloyds Garden Co-operative Housing Society" 
                   className="w-full h-full block object-cover object-[50%_52%] transition-transform duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:scale-[1.018]"
                 />
               </motion.div>
@@ -99,7 +101,7 @@ export default function GallerySection() {
           {/* Row 2 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3 md:gap-4">
             
-            {/* llyods1 (street): cols 1-5 */}
+            {/* lloyds1 (street): cols 1-5 */}
             <div className="lg:col-span-5 group overflow-hidden rounded-[4px]">
               <motion.div 
                 className="w-full h-full lg:h-[380px] aspect-[4/3] md:aspect-auto bg-[var(--color-rule)]"
@@ -110,14 +112,15 @@ export default function GallerySection() {
                 <img 
                   loading="lazy"
                   decoding="async"
-                  src="/society-images/llyods1.png" 
-                  alt="Street view of Llyods Garden and its tree-lined entrance" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  src="/society-images/lloyds1.webp" 
+                  alt="Street view of Lloyds Garden and its tree-lined entrance" 
                   className="w-full h-full block object-cover object-[50%_40%] transition-transform duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:scale-[1.018]"
                 />
               </motion.div>
             </div>
 
-            {/* llyods3 (sign): cols 6-12 */}
+            {/* lloyds3 (sign): cols 6-12 */}
             <div className="lg:col-span-7 group overflow-hidden rounded-[4px]">
               <motion.div 
                 className="w-full h-full lg:h-[380px] aspect-[4/5] md:aspect-auto bg-[var(--color-rule)]"
@@ -128,8 +131,9 @@ export default function GallerySection() {
                 <img 
                   loading="lazy"
                   decoding="async"
-                  src="/society-images/llyods3.png" 
-                  alt="Llyods Garden society sign surrounded by greenery" 
+                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                  src="/society-images/lloyds3.webp" 
+                  alt="Lloyds Garden society sign surrounded by greenery" 
                   className="w-full h-full block object-cover object-[center_48%] transition-transform duration-[500ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:group-hover:scale-[1.018]"
                 />
               </motion.div>

@@ -10,7 +10,7 @@ export interface EventData {
 }
 
 // TEMPORARY PREVIEW EVENTS
-// Replace with official Llyods CHSL event data when received.
+// Replace with official Lloyds CHSL event data when received.
 
 export const events: readonly EventData[] = [
   {

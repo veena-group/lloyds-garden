@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ruleDraw, DUR, VIEWPORT_OFFSET } from '../utils/animations';
 
 export default function Footer() {
   const shouldReduceMotion = useReducedMotion();
+  const [logoError, setLogoError] = useState(false);
 
   const staggerFooter: Variants = {
     initial: {},
@@ -34,14 +36,21 @@ export default function Footer() {
           {/* Brand */}
           <motion.div className="md:col-span-5" variants={shouldReduceMotion ? {} : fadeItem}>
             <Link to="/" className="inline-block mb-6">
-              <img 
-                src="/logo.png" 
-                alt="Llyods CHSL" 
-                className="w-[145px] md:w-[165px] object-contain brightness-0 invert opacity-90"
-              />
+              {logoError ? (
+                <span className="font-display text-xl sm:text-2xl tracking-wide uppercase text-white">
+                  LLOYDS <span className="text-xs sm:text-sm font-sans font-medium tracking-widest ml-1 opacity-80">CHSL</span>
+                </span>
+              ) : (
+                <img 
+                  src="/logo.webp" 
+                  alt="Lloyds CHSL" 
+                  onError={() => setLogoError(true)}
+                  className="w-[145px] md:w-[165px] object-contain brightness-0 invert opacity-90"
+                />
+              )}
             </Link>
             <p className="text-[14px] text-white/60 max-w-[280px] leading-relaxed">
-              Official website of Llyods Garden Co-operative Housing Society Ltd.
+              Official website of Lloyds Garden Co-operative Housing Society Ltd.
             </p>
           </motion.div>
 
@@ -105,7 +114,7 @@ export default function Footer() {
             transition={{ duration: DUR.STD, delay: 0.4 }}
             viewport={VIEWPORT_OFFSET}
           >
-            &copy; 2026 Llyods Garden Co-operative Housing Society Ltd. All Rights Reserved.
+            &copy; 2026 Lloyds Garden Co-operative Housing Society Ltd. All Rights Reserved.
           </motion.p>
         </div>
       </div>

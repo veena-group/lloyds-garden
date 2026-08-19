@@ -1,45 +1,24 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, useReducedMotion, type Variants } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { sectionLabel, ruleDraw, ruleDrawY, DUR, EASE_PRIMARY, VIEWPORT_OFFSET } from '../../utils/animations';
 
-export default function LivingAtLlyodsSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
+export default function LivingAtLloydsSection() {
   const shouldReduceMotion = useReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 70%", "end 30%"]
-  });
-
-  const op1 = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 1, 0.55]);
-  const op2 = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0.55, 1, 0.55]);
-  const op3 = useTransform(scrollYProgress, [0.5, 0.7, 1], [0.55, 1, 1]);
-
-  const scale1 = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 1, 0.35]);
-  const scale2 = useTransform(scrollYProgress, [0.2, 0.5, 0.8], [0.35, 1, 0.35]);
-  const scale3 = useTransform(scrollYProgress, [0.5, 0.7, 1], [0.35, 1, 1]);
 
   const themes = [
     {
       number: '01',
       title: 'Community',
-      desc: 'Residents and families together shape the everyday character of Llyods.',
-      op: op1,
-      scale: scale1
+      desc: 'Residents and families together shape the everyday character of Lloyds.'
     },
     {
       number: '02',
       title: 'Shared Spaces',
-      desc: 'Common spaces form an important part of society life and are cared for through shared responsibility.',
-      op: op2,
-      scale: scale2
+      desc: 'Common spaces form an important part of society life and are cared for through shared responsibility.'
     },
     {
       number: '03',
       title: 'Continuity',
-      desc: 'Resident participation and responsible administration help maintain the community for present and future members.',
-      op: op3,
-      scale: scale3
+      desc: 'Resident participation and responsible administration help maintain the community for present and future members.'
     }
   ];
 
@@ -59,7 +38,7 @@ export default function LivingAtLlyodsSection() {
   };
 
   return (
-    <section id="community" className="py-[64px] md:py-[72px] lg:py-[80px] bg-[var(--color-paper)]" ref={containerRef}>
+    <section id="community" className="py-[64px] md:py-[72px] lg:py-[80px] bg-[var(--color-paper)]">
       <div className="max-w-[1320px] mx-auto px-[20px] md:px-[32px] lg:px-[48px] xl:px-[56px] w-full">
         
         <div className="mb-[48px] md:mb-[64px]">
@@ -80,7 +59,7 @@ export default function LivingAtLlyodsSection() {
             transition={{ duration: DUR.STD, delay: 0.1, ease: EASE_PRIMARY }}
             viewport={VIEWPORT_OFFSET}
           >
-            Life at Llyods.
+            Life at Lloyds.
           </motion.h2>
         </div>
 
@@ -117,15 +96,12 @@ export default function LivingAtLlyodsSection() {
               )}
               
               <motion.div variants={shouldReduceMotion ? {} : itemFade}>
-                <motion.div style={{ opacity: shouldReduceMotion ? 1 : theme.op }} className="transition-opacity duration-75">
+                <div>
                   <span className="block text-[32px] md:text-[36px] font-display text-[var(--color-ink)] opacity-40 mb-3">
                     {theme.number}
                   </span>
                   
-                  <motion.div 
-                    style={{ scaleX: shouldReduceMotion ? 1 : theme.scale }} 
-                    className="h-[2px] w-[24px] bg-[var(--color-bronze)] origin-left mb-5" 
-                  />
+                  <div className="h-[2px] w-[24px] bg-[var(--color-bronze)] mb-5" />
 
                   <h3 className="text-[13px] md:text-[14px] font-semibold tracking-[0.08em] uppercase text-[var(--color-ink)] mb-3">
                     {theme.title}
@@ -133,7 +109,7 @@ export default function LivingAtLlyodsSection() {
                   <p className="text-[15px] md:text-[16px] leading-[1.65] text-[#6F6B65]">
                     {theme.desc}
                   </p>
-                </motion.div>
+                </div>
               </motion.div>
             </motion.div>
           ))}

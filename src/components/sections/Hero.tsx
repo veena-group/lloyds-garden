@@ -41,7 +41,7 @@ export default function Hero() {
                   animate={{ y: "0%" }}
                   transition={{ duration: DUR.EDITORIAL, delay: 0.12, ease: EASE_PRIMARY }}
                 >
-                  Llyods
+                  Lloyds
                 </motion.div>
               </div>
               <div className="overflow-hidden pb-[0.2em] -mb-[0.2em]">
@@ -74,7 +74,7 @@ export default function Hero() {
                 href="#about" 
                 className="bg-[var(--color-ink)] text-[#FAF8F3] px-[24px] py-[12px] rounded-[4px] text-[13px] font-semibold tracking-wide transition-colors duration-200 hover:bg-[var(--color-bronze)]"
               >
-                Discover Llyods
+                Discover Lloyds
               </a>
               <Link 
                 to="/login"
@@ -96,8 +96,11 @@ export default function Hero() {
             >
               <motion.img 
                 fetchPriority="high"
-                src="/society-images/llyods4.png" 
-                alt="Exterior view of Llyods Garden Co-operative Housing Society" 
+                loading="eager"
+                decoding="async"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                src="/society-images/lloyds4.webp" 
+                alt="Exterior view of Lloyds Garden Co-operative Housing Society" 
                 className="w-full h-full object-cover object-[center_35%]"
                 initial={{ scale: shouldReduceMotion ? 1 : 1.035 }}
                 animate={{ scale: 1 }}
@@ -113,7 +116,7 @@ export default function Hero() {
                 transition={{ duration: DUR.EDITORIAL, delay: 1.1 }}
               >
                 <span className="text-[10px] font-semibold tracking-[0.14em] uppercase text-white/90 drop-shadow-md">
-                  Llyods Garden · Mumbai
+                  Lloyds Garden · Mumbai
                 </span>
               </motion.div>
             </motion.div>

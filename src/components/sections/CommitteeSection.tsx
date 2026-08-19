@@ -182,7 +182,7 @@ export default function CommitteeSection() {
                   A well-functioning society is built through communication, participation and cooperation among its members.
                 </p>
                 <p>
-                  The Managing Committee remains committed to supporting an organised and responsible community environment at Llyods and encourages members to stay connected through the society’s official channels.
+                  The Managing Committee remains committed to supporting an organised and responsible community environment at Lloyds and encourages members to stay connected through the society’s official channels.
                 </p>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { sectionLabel, DUR, EASE_PRIMARY, VIEWPORT_OFFSET } from '../../utils/animations';
+import { sectionLabel, clipRevealRight, DUR, EASE_PRIMARY, VIEWPORT_OFFSET } from '../../utils/animations';
 
 export default function AboutSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -14,17 +14,22 @@ export default function AboutSection() {
           
           {/* Image (5 cols) */}
           <div className="lg:col-span-5 order-2 lg:order-1 lg:mt-0">
-            <motion.div
+            <motion.div 
               className="aspect-[4/5] overflow-hidden rounded-[4px] bg-[var(--color-rule)]"
-              initial={{ clipPath: 'circle(0% at 50% 50%)' }}
-              animate={{ clipPath: 'circle(150% at 50% 50%)' }}
+              initial={shouldReduceMotion ? { opacity: 0 } : clipRevealRight.initial}
+              whileInView={shouldReduceMotion ? { opacity: 1, transition: { duration: DUR.STD } } : clipRevealRight.whileInView}
+              viewport={VIEWPORT_OFFSET}
             >
-              <img
+              <motion.img 
                 loading="lazy"
                 decoding="async"
-                src="/society-images/llyods2.png"
-                alt="Entrance to Llyods Garden Co-operative Housing Society"
+                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                src="/society-images/lloyds2.webp" 
+                alt="Entrance to Lloyds Garden Co-operative Housing Society" 
                 className="w-full h-full object-cover object-center"
+                initial={{ scale: shouldReduceMotion ? 1 : 1.025 }}
+                whileInView={{ scale: 1, transition: { duration: DUR.IMAGE, ease: EASE_PRIMARY } }}
+                viewport={VIEWPORT_OFFSET}
               />
             </motion.div>
           </div>
@@ -41,7 +46,7 @@ export default function AboutSection() {
               variants={sectionLabel}
             >
               <span className="block text-[11px] md:text-[12px] font-semibold tracking-[0.16em] uppercase text-[var(--color-muted)] mb-6">
-                About Llyods
+                About Lloyds
               </span>
             </motion.div>
             
@@ -63,7 +68,7 @@ export default function AboutSection() {
               viewport={VIEWPORT_OFFSET}
             >
               <p>
-                At Llyods, residential living extends beyond individual homes. Residents share the common spaces and responsibilities that form part of everyday society life.
+                At Lloyds, residential living extends beyond individual homes. Residents share the common spaces and responsibilities that form part of everyday society life.
               </p>
               <p>
                 The Managing Committee works with members on matters relating to administration, common facilities, society affairs and the continued upkeep of the residential environment.

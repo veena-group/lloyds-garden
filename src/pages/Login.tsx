@@ -56,15 +56,16 @@ export default function Login() {
       {/* LEFT: Visual Area (approx 55%) */}
       <div className="hidden md:flex md:w-[55%] relative overflow-hidden bg-[var(--color-border-subtle)]">
         <img 
-          src="/society-images/llyods3.png" 
-          alt="Llyods Garden Identity" 
+          onError={(e) => { e.currentTarget.style.display = 'none'; }}
+          src="/society-images/lloyds3.webp" 
+          alt="Lloyds Garden Identity" 
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/20" />
         <div className="absolute top-12 left-12 z-10">
           <Link to="/" className="inline-block">
             <span className="font-display text-3xl tracking-wide uppercase text-white">
-              LLYODS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-white/80">CHSL</span>
+              LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-white/80">CHSL</span>
             </span>
           </Link>
         </div>
@@ -88,7 +89,7 @@ export default function Login() {
               <ArrowLeft size={16} /> Back to website
             </Link>
             <span className="block font-display text-3xl tracking-wide uppercase text-[var(--color-ink)]">
-              LLYODS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-[var(--color-stone)]">CHSL</span>
+              LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-[var(--color-stone)]">CHSL</span>
             </span>
           </div>
 

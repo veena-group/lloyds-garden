@@ -1,8 +1,8 @@
 import Hero from '../components/sections/Hero';
 import WelcomeSection from '../components/sections/WelcomeSection';
 import AboutSection from '../components/sections/AboutSection';
-import AroundLlyodsSection from '../components/sections/AroundLlyodsSection';
-import LivingAtLlyodsSection from '../components/sections/LivingAtLlyodsSection';
+import AroundLloydsSection from '../components/sections/AroundLloydsSection';
+import LivingAtLloydsSection from '../components/sections/LivingAtLloydsSection';
 import CooperativeLivingSection from '../components/sections/CooperativeLivingSection';
 import CommitteeSection from '../components/sections/CommitteeSection';
 import GallerySection from '../components/sections/GallerySection';
@@ -20,11 +20,11 @@ export default function Home() {
       <WelcomeSection />
       <AboutSection />
 
-      {/* 03. Around Llyods */}
-      <AroundLlyodsSection />
+      {/* 03. Around Lloyds */}
+      <AroundLloydsSection />
 
-      {/* 04. Life at Llyods */}
-      <LivingAtLlyodsSection />
+      {/* 04. Life at Lloyds */}
+      <LivingAtLloydsSection />
 
       {/* 05. Co-operative Living */}
       <CooperativeLivingSection />
