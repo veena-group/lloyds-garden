@@ -65,7 +65,7 @@ export default function Login() {
         <div className="absolute top-12 left-12 z-10">
           <Link to="/" className="inline-block">
             <span className="font-display text-3xl tracking-wide uppercase text-white">
-              LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-white/80">GARDEN</span>
+              LLOYDS <span className="text-sm font-sans font-medium tracking-widest ml-1 text-white/80">GARDEN REDEVELOPMENT</span>
             </span>
           </Link>
         </div>
